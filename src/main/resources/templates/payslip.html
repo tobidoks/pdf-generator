@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Google font "Lato" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <title>paySlip</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            background: rgba(7, 25, 50, 0.20);
+            font-family: 'Lato', sans-serif;
+            page-break-inside: avoid;
+        }
+
+        hr {
+            width: 100%;
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        h5 {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .wide-letr-spce {
+            letter-spacing: 4px;
+        }
+
+        .grey {
+            color: #8CA0A4;
+        }
+
+        .blue {
+            color: #071932;
+        }
+
+        .main-body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 600px;
+            height: 800px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 10px;
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .close-container {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .header-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .header-container p {
+            font-size: 12px;
+            font-weight: 500;
+            color: #8CA0A4;
+            margin: 5px 0;
+        }
+
+        .header-container h3 {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .section {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 10px;
+            page-break-inside: avoid;
+        }
+
+        .table-row {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .table-left {
+            width: 25%;
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .table-right {
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .company {
+            font-size: 10px;
+            font-weight: 600;
+            margin: 8px 5px;
+        }
+
+        .company-val {
+            font-size: 10px;
+            font-weight: 500;
+            margin: 5px 5px 5px 0;
+        }
+
+        .section-container {
+            width: 45%;
+            margin: 0 10px 0 0;
+        }
+
+        .table-row-num {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .table-row-num .num {
+            justify-content: flex-end;
+            font-size: 10px;
+        }
+
+        .total {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .full {
+            width: 100%;
+            margin: 0 20px 0 0;
+            page-break-inside: avoid;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .ns-container {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .ns-container button {
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            background: #15C463;
+            border-radius: 4px;
+            outline: none;
+            border: 0;
+            margin: 0 10px;
+            padding: 8px 14px;
+        }
+
+        .footer > p {
+            font-weight: 700;
+            font-size: 8px;
+            color: #8CA0A4;
+        }
+
+        .sub-container {
+            text-align: center;
+        }
+
+        .sub-container > p {
+            font-size: 8px;
+            font-weight: 500;
+            color: #8CA0A4;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="main-body">
+    <div class="container">
+        <div class="close-container">
+            <img src="https://olyves-assests.s3.amazonaws.com/Olyves-Assests/close.png" alt="close icon"/>
+        </div>
+        <div class="header-container">
+            <div>
+                <img src="https://olyves-assests.s3.amazonaws.com/Olyves-Assests/ReceiptIcon.png" alt="payslip icon"/>
+            </div>
+            <h3 class="blue">Olyves &amp; Sons Ltd</h3>
+            <p>44, Montgomery Road, Yaba</p>
+            <h2 class="wide-letr-spce">EMPLOYEE PAYSLIP</h2>
+        </div>
+        <hr/>
+        <div class="section">
+            <div class="section-container">
+                <div class="table-row">
+                    <p class="table-left grey">Employee:</p>
+                    <p class="company blue">Agbado Champion</p>
+                </div>
+                <div class="table-row">
+                    <p class="table-left grey">Staff ID:</p>
+                    <p class="company-val blue">OLYV53674762</p>
+                </div>
+                <div class="table-row">
+                    <p class="table-left grey">Role:</p>
+                    <p class="company-val blue">Financial Controller</p>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="table-row">
+                    <p class="table-left grey">Start Date:</p>
+                    <p class="company-val blue">30th May 2022</p>
+                </div>
+                <div class="table-row">
+                    <p class="table-left grey">Pay Period:</p>
+                    <p class="company-val blue">January 2024</p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="section">
+            <div class="section-container">
+                <h3 class="blue">Bank Details</h3>
+                <div class="table-row">
+                    <p class="table-left grey">Account No:</p>
+                    <p class="company-val blue">January 2024</p>
+                </div>
+                <div class="table-row">
+                    <p class="table-left grey">Bank Name:</p>
+                    <p class="company-val blue">January 2024</p>
+                </div>
+            </div>
+            <div class="section-container">
+                <h3 class="blue">Pension Details</h3>
+                <div class="table-row">
+                    <p class="table-left grey">PFA Name:</p>
+                    <p class="company-val blue">Stanbic Pensions</p>
+                </div>
+                <div class="table-row">
+                    <p class="table-left grey">Pension PIN:</p>
+                    <p class="company-val blue">STB87365473</p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="section">
+            <div class="section-container">
+                <h3 class="blue">Gross Earnings Information</h3>
+                <div class="table-row-num">
+                    <p class="company-val grey">Earnings</p>
+                    <p class="company-val grey num">Amount</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Basic</p>
+                    <p class="table-right blue num">50,000.89</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Housing</p>
+                    <p class="table-right blue num">65,000.23</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Basic</p>
+                    <p class="table-right blue num">50,000.89</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Housing</p>
+                    <p class="table-right blue num">65,000.23</p>
+                </div>
+                <div class="table-row-num">
+                    <p></p>
+                    <p class="total blue num">65,000.23</p>
+                </div>
+            </div>
+            <div class="section-container">
+                <h3 class="blue">Gross Deduction Information</h3>
+                <div class="table-row-num">
+                    <p class="company-val grey">Deduction</p>
+                    <p class="company-val grey num">Amount</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Basic</p>
+                    <p class="table-right blue num">50,000.89</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Housing</p>
+                    <p class="table-right blue num">65,000.23</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Basic</p>
+                    <p class="table-right blue num">50,000.89</p>
+                </div>
+                <div class="table-row-num">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="table-row-num">
+                    <p></p>
+                    <p class="total blue num">65,000.23</p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="section">
+            <div class="full">
+                <div class="table-row-num">
+                    <h3 class="blue">Reimbursements</h3>
+                    <p class="table-right num grey">Amount</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Telephone Reimbursements</p>
+                    <p class="table-right num blue">65,000.23</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Fuel Reimbursements</p>
+                    <p class="table-right num blue">50,000.89</p>
+                </div>
+                <div class="table-row-num">
+                    <p></p>
+                    <p class="total blue">90,000.89</p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="section">
+            <div class="full">
+                <div class="table-row-num">
+                    <h3 class="blue">Employers’ Contributions</h3>
+                    <p class="table-right num grey">Amount</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Pension Contribution</p>
+                    <p class="table-right num blue">65,000.23</p>
+                </div>
+                <div class="table-row-num">
+                    <p class="table-left blue">Fuel Reimbursements</p>
+                    <p class="table-right num blue">50,000.89</p>
+                </div>
+                <div class="table-row-num">
+                    <p></p>
+                    <p class="total blue">90,000.89</p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="footer">
+            <div class="ns-container">
+                <button>Net Salary(NS):</button>
+                <h1>₦‎564,009.43</h1>
+            </div>
+            <p>NS = Gross Earnings - Total Deductions + Reimbursements</p>
+        </div>
+        <div class="sub-container">
+            <p>This is a system-generated slip</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
